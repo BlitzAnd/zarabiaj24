@@ -286,7 +286,7 @@ $("listingForm").onsubmit = async e => {
     item_condition: "Nie podano",
     city: "Nie podano",
     images: [],
-    status: "pending"
+    status: "active"
   });
 
   if (error) {
