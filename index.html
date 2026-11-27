@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#12345a"><meta name="description" content="Zarabiaj24 – kupuj i sprzedawaj online">
+<link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css">
+<title>Zarabiaj24</title>
+</head>
+<body>
+<header><div class="brand"><span class="logo">Z24</span><span>Zarabiaj<strong>24</strong><small>Marketplace</small></span></div><button id="accountBtn" class="ghost">Moje konto</button></header>
+<main>
+<section class="hero"><p class="eyebrow">TWÓJ RYNEK ONLINE</p><h1>Kupuj i sprzedawaj bez granic.</h1><p>Wystaw przedmiot, znajdź kupującego i rozwijaj swój biznes.</p><button id="heroSell" class="light">＋ Dodaj ogłoszenie</button></section>
+<section class="stats"><div><b>24/7</b><small>Dostępność</small></div><div><b>5%</b><small>Planowana prowizja</small></div><div><b>PLN</b><small>Waluta</small></div></section>
+<section><div class="section-head"><h2>Znajdź coś dla siebie</h2><span class="muted" id="listingCount"></span></div>
+<input id="search" class="search" placeholder="Szukaj produktów…">
+<div class="chips" id="chips"><button class="chip selected" data-cat="Wszystkie">Wszystkie</button><button class="chip" data-cat="Elektronika">Elektronika</button><button class="chip" data-cat="Moda">Moda</button><button class="chip" data-cat="Dom">Dom</button><button class="chip" data-cat="Sport">Sport</button><button class="chip" data-cat="Inne">Inne</button></div>
+<div id="products" class="products"></div></section>
+<section class="panel" id="sellerPanel"><div class="section-head"><h2>Panel sprzedawcy</h2><span class="tag">PODGLĄD</span></div><div class="stats mini"><div><b id="myListings">0</b><small>Moje ogłoszenia</small></div><div><b id="mySales">0 zł</b><small>Sprzedaż demo</small></div></div><button class="outline" id="showMy">Pokaż moje ogłoszenia</button></section>
+<section class="panel hidden" id="adminPanel"><h2>Panel administratora</h2><p class="muted">Dostęp demonstracyjny – dane zapisane tylko w tej przeglądarce.</p><div class="stats mini"><div><b id="adminListings">0</b><small>Ogłoszenia</small></div><div><b>5%</b><small>Planowana prowizja</small></div></div><button class="outline" id="exportData">Eksportuj dane JSON</button></section>
+</main>
+<nav><button class="navitem active" data-view="home">⌂<small>Start</small></button><button class="navitem" id="navSell">＋<small>Sprzedaj</small></button><button class="navitem" data-view="seller">▤<small>Moje konto</small></button><button class="navitem" id="navAdmin">⚙<small>Admin</small></button></nav>
+<dialog id="listingDialog"><form id="listingForm"><div class="dialog-head"><h2>Dodaj ogłoszenie</h2><button type="button" class="x" data-close>×</button></div>
+<label>Nazwa produktu<input required maxlength="90" id="productName" placeholder="Np. Telefon iPhone"></label>
+<div class="two"><label>Cena (zł)<input required type="number" min="1" step="0.01" id="productPrice" placeholder="250"></label><label>Kategoria<select id="productCategory"><option>Elektronika</option><option>Moda</option><option>Dom</option><option>Sport</option><option>Inne</option></select></label></div>
+<label>Opis<textarea id="productDescription" maxlength="700" rows="3" placeholder="Opisz stan, cechy i ewentualne wady"></textarea></label>
+<label>Emoji produktu (tymczasowy obrazek)<input id="productEmoji" maxlength="4" value="📦"></label>
+<button class="primary" type="submit">Dodaj do podglądu</button><p class="muted tiny">To ogłoszenie będzie widoczne wyłącznie w tej przeglądarce. Nie jest publikowane w Internecie.</p></form></dialog>
+<dialog id="accountDialog"><div class="dialog-head"><h2>Moje konto</h2><button class="x" data-close>×</button></div><p>To wersja demonstracyjna bez prawdziwych kont i logowania.</p><label>Wyświetlana nazwa<input id="displayName" placeholder="Np. Sprzedawca24"></label><button class="primary" id="saveName">Zapisz nazwę na tym urządzeniu</button><p class="muted tiny">Prawdziwe logowanie i synchronizacja między urządzeniami zostaną dodane po podłączeniu serwera.</p></dialog>
+<dialog id="detailDialog"><div class="dialog-head"><h2 id="detailTitle">Produkt</h2><button class="x" data-close>×</button></div><div id="detailContent"></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body></html>

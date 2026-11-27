@@ -1,0 +1,10 @@
+{
+  "name": "Zarabiaj24",
+  "short_name": "Zarabiaj24",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#12345a",
+  "lang": "pl",
+  "description": "Polski marketplace Zarabiaj24"
+}
